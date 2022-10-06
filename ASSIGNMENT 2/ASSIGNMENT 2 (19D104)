@@ -1,0 +1,16 @@
+ASSIGNMENT 2
+TASK ASSIGNED:
+Build a python code,assume u get temperature and humidity
+values(generated with random function to a variable)and write a condition
+to continuously detect alarm in case of high temperature.
+
+PYTHON CODE:
+import random
+while(True):
+    temp=random.randrange(0,100)
+    humid=random.randrange(0,100)
+    if(temp>90 or temp<80) and humid>60:
+       print(“------Dangerous!!!------”)
+       
+               SUBMITTED BY,
+                    THILLAI NIVETHA.A (19D104)
