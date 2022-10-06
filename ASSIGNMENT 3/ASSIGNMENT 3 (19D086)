@@ -1,0 +1,53 @@
+ASSIGNMENT 3
+TASK ASSIGNED:
+Write a python code for blinking LED and Traffic lights for Raspberry Pi.
+
+PYTHON CODE FOR BLINKING LED:
+from gpiozero import Button,LED
+from time import sleep
+button = Button(21)
+led=LED(25)
+while True:
+    led.blink()
+    button.wait_for_press()
+    led.off()
+    button.wait_for_release()
+    
+     ○ Run the code and you’ll see the LED blink on and off until the button
+       is pressed, at which point it will turn off completely. When the button
+       is released, it will start blinking again.
+     ○ Try adding some parameters to blink to make it blink faster or slower:
+     ○ led.blink(2, 2) - 2 seconds on, 2 seconds off
+     ○ led.blink(0.5, 0.5) - half a second on, half a second off
+     
+     
+
+PYTHON CODE FOR TRAFFIC LIGHTS:
+from gpiozero import Button,TrafficLights
+from time import sleep
+button=Button(21)
+lights=TrafficLights(25,8,7)
+while True:
+    lights.blink()
+    button.wait_for_press()
+    lights.off()
+    button.wait_for_release()
+
+
+PYTHON CODE TO PERFORM AUTOMATED SEQUENCE OF LED BEING LIT:
+from gpiozero import Button,TrafficLights,Buzzer
+from time import sleep
+button = Button(21)
+lights=TrafficLights(25,8,7)
+buzzer=Buzzer(15)
+while True:
+  lights.green.on()#pin 25
+  sleep(1)
+  lights.amber.on()#pin 8
+  sleep(1)
+  lights.red.on()#pin 7
+  sleep(1)
+  lights.off()
+
+               SUBMITTED BY,
+                 SHAKINSHA.M(19D086)
