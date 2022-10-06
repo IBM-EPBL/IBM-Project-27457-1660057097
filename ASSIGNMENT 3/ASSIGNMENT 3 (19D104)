@@ -19,8 +19,22 @@ while True:
      ○ Try adding some parameters to blink to make it blink faster or slower:
      ○ led.blink(2, 2) - 2 seconds on, 2 seconds off
      ○ led.blink(0.5, 0.5) - half a second on, half a second off
+     
+     
 
 PYTHON CODE FOR TRAFFIC LIGHTS:
+from gpiozero import Button,TrafficLights
+from time import sleep
+button=Button(21)
+lights=TrafficLights(25,8,7)
+while True:
+    lights.blink()
+    button.wait_for_press()
+    lights.off()
+    button.wait_for_release()
+
+
+PYTHON CODE TO PERFORM AUTOMATED SEQUENCE OF LED BEING LIT:
 from gpiozero import Button,TrafficLights,Buzzer
 from time import sleep
 button = Button(21)
