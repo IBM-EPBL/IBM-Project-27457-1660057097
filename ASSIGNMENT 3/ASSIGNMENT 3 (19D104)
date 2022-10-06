@@ -8,16 +8,17 @@ from time import sleep
 button = Button(21)
 led=LED(25)
 while True:
-led.blink()
-button.wait_for_press()
-led.off()
-button.wait_for_release()
-○ Run the code and you’ll see the LED blink on and off until the button
-is pressed, at which point it will turn off completely. When the button
-is released, it will start blinking again.
-○ Try adding some parameters to blink to make it blink faster or slower:
-○ led.blink(2, 2) - 2 seconds on, 2 seconds off
-○ led.blink(0.5, 0.5) - half a second on, half a second off
+    led.blink()
+    button.wait_for_press()
+    led.off()
+    button.wait_for_release()
+    
+     ○ Run the code and you’ll see the LED blink on and off until the button
+       is pressed, at which point it will turn off completely. When the button
+       is released, it will start blinking again.
+     ○ Try adding some parameters to blink to make it blink faster or slower:
+     ○ led.blink(2, 2) - 2 seconds on, 2 seconds off
+     ○ led.blink(0.5, 0.5) - half a second on, half a second off
 
 PYTHON CODE FOR TRAFFIC LIGHTS:
 from gpiozero import Button,TrafficLights,Buzzer
@@ -26,13 +27,13 @@ button = Button(21)
 lights=TrafficLights(25,8,7)
 buzzer=Buzzer(15)
 while True:
-lights.green.on()#pin 25
-sleep(1)
-lights.amber.on()#pin 8
-sleep(1)
-lights.red.on()#pin 7
-sleep(1)
-lights.off()
+  lights.green.on()#pin 25
+  sleep(1)
+  lights.amber.on()#pin 8
+  sleep(1)
+  lights.red.on()#pin 7
+  sleep(1)
+  lights.off()
 
                SUBMITTED BY,
                  THILLAI NIVETHA.A(19D104)
